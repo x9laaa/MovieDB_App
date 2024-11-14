@@ -14,23 +14,24 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import cl.bootcamp.moviedbapp.model.Movie
 import cl.bootcamp.moviedbapp.model.Movies
 import cl.bootcamp.moviedbapp.viewModel.MovieViewModel
 import coil.compose.AsyncImage
 
 @Composable
 fun MovieListScreen(viewModel: MovieViewModel ) {
-    val movies by viewModel.movies.collectAsState()
+    val movie by viewModel.movies.collectAsState(initial = emptyList())
 
     LazyColumn {
-        items(movies) { movies ->
-            MovieCard(movies)
+        items(movie) { movie ->
+            MovieCard(movie)
         }
     }
 }
 
 @Composable
-fun MovieCard(movies: Movies) {
+fun MovieCard(movies: Movie) {
     Card(
         modifier = Modifier
             .fillMaxWidth()

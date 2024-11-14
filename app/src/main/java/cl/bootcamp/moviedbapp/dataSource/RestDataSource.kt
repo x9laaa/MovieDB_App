@@ -11,5 +11,4 @@ interface RestDataSource {
     suspend fun getPopularMovies(
         @Query("api_key") apiKey: String = API_KEY
     ): MovieResponse
-
 }
