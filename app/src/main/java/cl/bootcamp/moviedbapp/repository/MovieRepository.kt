@@ -11,6 +11,8 @@ import javax.inject.Inject
 interface MovieRepository {
     suspend fun getPopularMoviesApi(): MovieResponse
     fun getPopularMoviesRoom(): Flow<List<Movie>>
+    suspend fun deleteMovieRoom(movie: Movie)
+    suspend fun addMovieRoom(movie: Movie)
 }
 
 class MovieRepositoryImpl @Inject constructor(
@@ -29,5 +31,13 @@ class MovieRepositoryImpl @Inject constructor(
 
     override fun getPopularMoviesRoom(): Flow<List<Movie>> {
         return movieDao.getALlMoviesRoom()
+    }
+
+    override suspend fun deleteMovieRoom(movie: Movie) {
+        movieDao.deleteMovieRoom(movie)
+    }
+
+    override suspend fun addMovieRoom(movie: Movie) {
+        movieDao.insertMovieRoom(movie)
     }
 }

@@ -1,6 +1,7 @@
 package cl.bootcamp.moviedbapp.model
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -14,4 +15,7 @@ interface MovieDao {
 
     @Query("SELECT * FROM movie")
     fun getALlMoviesRoom(): Flow<List<Movie>>
+
+    @Delete
+    suspend fun deleteMovieRoom(movie: Movie)
 }
