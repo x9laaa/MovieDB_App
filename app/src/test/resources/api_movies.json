@@ -1,0 +1,7 @@
+{
+  "results": [
+    {"id": 1, "title": "Pelicula 1", "overview": "Descripcion 1", "poster_path": "/path1.jpg", "release_date": "2024-01-01", "vote_average": 8.0},
+    {"id": 2, "title": "Pelicula 2", "overview": "Descripcion 2", "poster_path": "/path2.jpg", "release_date": "2024-02-01", "vote_average": 7.5},
+    {"id": 3, "title": "Pelicula 3", "overview": "Descripcion 3", "poster_path": "/path3.jpg", "release_date": "2024-03-01", "vote_average": 9.0}
+  ]
+}
